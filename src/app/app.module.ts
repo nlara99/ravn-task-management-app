@@ -7,6 +7,7 @@ import { appConfigInit } from './app-config-Init';
 import { ConfigService } from './modules/shared/services/config.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { TokenInterceptor } from './core/interceptors/token.interceptor';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     {
