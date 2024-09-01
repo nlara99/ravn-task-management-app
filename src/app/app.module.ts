@@ -10,6 +10,8 @@ import { TokenInterceptor } from './core/interceptors/token.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { ROOT_REDUCERS } from './core/store/app.state';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -20,8 +22,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({}, {}),
-    StoreDevtoolsModule.instrument({ name: 'TEST'}),
+    StoreModule.forRoot(ROOT_REDUCERS),
+    StoreDevtoolsModule.instrument({ name: 'TEST' }),
+    MatProgressSpinnerModule
   ],
   providers: [
     {
@@ -34,7 +37,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-  },
+    },
   ],
   bootstrap: [AppComponent]
 })

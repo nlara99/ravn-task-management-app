@@ -1,1 +1,7 @@
+<mat-spinner *ngIf="!(loading$| async)"></mat-spinner>
+
+<strong>
+    <h4></h4>{{loading$ |async| json}}
+</strong>
+
 <router-outlet></router-outlet>
