@@ -8,7 +8,9 @@
     <div class="bottom-section">
         <div class="column" *ngFor="let column of columns">
             <div class="column-header">{{ column }}</div>
-            <div class="column-body">{{ column }}</div>
+            <div class="column-body">
+                <app-task-card></app-task-card>
+            </div>
         </div>
     </div>
 </div>

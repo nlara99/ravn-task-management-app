@@ -5,18 +5,22 @@ import { TasksPageComponent } from './pages/tasks-page/tasks-page.component';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-
-
+import { TaskCardComponent } from './components/task-card/task-card.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
-    TasksPageComponent
+    TasksPageComponent,
+    TaskCardComponent
   ],
   imports: [
     CommonModule,
     TasksRoutingModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatMenuModule,
+    MatButtonModule
   ]
 })
 export class TasksModule { }
