@@ -14,12 +14,12 @@
         </mat-sidenav>
 
         <mat-sidenav-content class="content">
-            <mat-toolbar color="primary">
+            <!-- <mat-toolbar color="primary">
                 <button mat-icon-button (click)="sidenav.toggle()">
                     <mat-icon>menu</mat-icon>
                 </button>
                 <span>task-management-app</span>
-            </mat-toolbar>
+            </mat-toolbar> -->
             <router-outlet></router-outlet>
         </mat-sidenav-content>
     </mat-sidenav-container>
@@ -38,12 +38,12 @@
             </mat-nav-list>
         </div>
         <div class="content">
-            <mat-toolbar color="primary">
+            <!-- <mat-toolbar color="primary">
                 <button mat-icon-button *ngIf="isSmallScreen">
                     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
                 </button>
                 <span>task-management-app</span>
-            </mat-toolbar>
+            </mat-toolbar> -->
             <router-outlet></router-outlet>
         </div>
     </ng-template>
