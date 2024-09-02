@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  gap: 20px;
+  background-color: #222528;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 20%;
+  background: #2c2f33;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.content {
+  width: 80%;
+  background: #2c2f33;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.logo-container {
+  background-color: inherit;
+  background-image: url(../assets/img/ravn-logo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20% 60%;
+}
+
+/* Responsive adjustments for small screens */
+.sidenav-container {
+  width: 100%;
+  height: 100%;
+}
+
+.sidenav {
+  width: 250px;
+  background: #2c2f33;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .content {
+    width: 100%;
+  }
+}

@@ -1,8 +1,4 @@
-import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { loadTasks } from './core/store/actions';
-import { Observable } from 'rxjs';
-import { selectLoadingTasks } from './core/store/selectors';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,14 +6,22 @@ import { selectLoadingTasks } from './core/store/selectors';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'task-management-app';
-  loading$: Observable<boolean> = new Observable<false>();
+  isSmallScreen = false;
 
-  constructor(private store: Store<any>) {
-    setTimeout(()=>{
-      this.store.dispatch(loadTasks());
-    },5000)
+  constructor() {
+    this.checkScreenSize();
+  }
 
-    this.loading$ = this.store.select(selectLoadingTasks)
+  @HostListener('window:resize', [])
+  onResize() {
+    this.checkScreenSize();
+  }
+
+  private checkScreenSize() {
+    this.isSmallScreen = window.innerWidth <= 768;
+  }
+
+  onCloseSidenav() {
+    // Aquí puedes manejar cualquier comportamiento adicional al cerrar el sidebar
   }
 }

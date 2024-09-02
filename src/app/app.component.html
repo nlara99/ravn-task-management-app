@@ -1,7 +1,44 @@
-<mat-spinner *ngIf="!(loading$| async)"></mat-spinner>
+<div class="container">
+    <!--Small Screens-->
+    <mat-sidenav-container class="sidenav-container" *ngIf="isSmallScreen; else regularLayout">
+        <mat-sidenav #sidenav mode="over" class="sidenav" (closedStart)="onCloseSidenav()">
+            <mat-toolbar class="logo-container"></mat-toolbar>
+            <mat-nav-list>
+                <a mat-list-item href="#">Link 1</a>
+                <a mat-list-item href="#">Link 2</a>
+                <a mat-list-item href="#">Link 3</a>
+            </mat-nav-list>
+        </mat-sidenav>
 
-<strong>
-    <h4></h4>{{loading$ |async| json}}
-</strong>
+        <mat-sidenav-content class="content">
+            <mat-toolbar color="primary">
+                <button mat-icon-button (click)="sidenav.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <span>task-management-app</span>
+            </mat-toolbar>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
 
-<router-outlet></router-outlet>
+    <!-- Big Screens -->
+    <ng-template #regularLayout>
+        <div class="sidebar">
+            <mat-toolbar class="logo-container"></mat-toolbar>
+            <mat-nav-list>
+                <a mat-list-item href="#">Link 1</a>
+                <a mat-list-item href="#">Link 2</a>
+                <a mat-list-item href="#">Link 3</a>
+            </mat-nav-list>
+        </div>
+        <div class="content">
+            <mat-toolbar color="primary">
+                <button mat-icon-button *ngIf="isSmallScreen">
+                    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+                </button>
+                <span>task-management-app</span>
+            </mat-toolbar>
+            <router-outlet></router-outlet>
+        </div>
+    </ng-template>
+</div>
