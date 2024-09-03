@@ -8,7 +8,9 @@
     <div class="bottom-section">
         <ng-container *ngFor="let status of columns">
             <div class="column">
-                <div class="column-header">{{ status }}</div>
+                <div class="column-header">
+                    {{ status }} <small>({{ tasksByStatus[status] ? tasksByStatus[status].length : 0 }})</small>
+                </div>
                 <div class="column-body" *ngIf="tasksByStatus[status] && tasksByStatus[status].length > 0; else empty">
                     <app-task-card *ngFor="let task of tasksByStatus[status]" [task]="task"></app-task-card>
                 </div>
@@ -18,6 +20,5 @@
                 </ng-template>
             </div>
         </ng-container>
-
     </div>
 </div>

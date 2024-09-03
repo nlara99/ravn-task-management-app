@@ -17,6 +17,7 @@ import { Task } from 'src/app/core/models/interfaces/taks.inteface';
 })
 export class TasksPageComponent implements OnInit {
   columns: string[] = Object.values(Status);
+  tasksByStatus: { [key: string]: Task[] } = {};
   tasksByStatus$: Observable<{ [status: string]: Task[] }>;
   loading$: Observable<boolean>;
   error$: Observable<any>;
@@ -41,7 +42,7 @@ export class TasksPageComponent implements OnInit {
 
   starStatus() {
     this.store.dispatch(loadTasks());
-    
+
     this.loading$.subscribe(loading => {
       if (loading) {
         this.loadingService.showLoading();
