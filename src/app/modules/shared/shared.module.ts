@@ -9,6 +9,7 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { EmptyComponent } from './components/empty/empty.component';
 
 
 const sharedComponents = [
@@ -16,7 +17,8 @@ const sharedComponents = [
   DueDateComponent,
   TagComponent,
   AvatarComponent,
-  LoadingComponent
+  LoadingComponent,
+  EmptyComponent
 ]
 
 
