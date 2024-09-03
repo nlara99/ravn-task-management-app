@@ -21,7 +21,5 @@ export class AppComponent {
     this.isSmallScreen = window.innerWidth <= 768;
   }
 
-  onCloseSidenav() {
-    // Aquí puedes manejar cualquier comportamiento adicional al cerrar el sidebar
-  }
+  onCloseSidenav() { }
 }

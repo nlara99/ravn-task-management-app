@@ -16,7 +16,7 @@ export class TaskCardComponent {
       avatar: 'path/to/avatar.png',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
-      type: '' // Ajusta según tu enum
+      type: ''
     },
     createdAt: new Date().toISOString(),
     creator: {
@@ -26,14 +26,14 @@ export class TaskCardComponent {
       avatar: 'path/to/avatar.png',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
-      type: '' // Ajusta según tu enum
+      type: ''
     },
     dueDate: 'YESTERDAY',
     id: 'task123',
     name: 'Example Task',
-    pointEstimate: PointEstimate.ONE, // Ajusta según tu enum
+    pointEstimate: PointEstimate.ONE,
     position: 1,
-    status: Status.TODO, // Ajusta según tu enum
+    status: Status.TODO,
     tags: [
       TaskTag.ANDROID,
       TaskTag.IOS,
@@ -58,12 +58,10 @@ export class TaskCardComponent {
   };
 
   editTask() {
-    // Implementa la lógica para editar la tarea
     console.log('Edit task:', this.task);
   }
 
   deleteTask() {
-    // Implementa la lógica para eliminar la tarea
     console.log('Delete task:', this.task);
   }
 }
