@@ -1,0 +1,33 @@
+.due-date-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding: 1px 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+
+  mat-icon {
+    font-size: 21px;
+    text-align: center;
+    margin-top: 3px;
+  }
+}
+
+.late-style{
+  background-color: rgba(218, 87, 75, 0.2);
+  color: #da584b;
+}
+
+.soso-style{
+  background-color: rgba(218, 87, 75, 0.1);
+  color: #d5da4b;
+}
+
+.ontime-style {
+  background-color: rgba(148, 151, 154, 0.1);
+  color: #fff;
+}

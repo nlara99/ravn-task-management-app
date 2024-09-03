@@ -1,0 +1,36 @@
+<mat-card class="task-card">
+    <mat-card-header>
+        <mat-card-title>{{ task.name }}</mat-card-title>
+        <div>
+            <mat-card-subtitle>
+                <button mat-icon-button [matMenuTriggerFor]="menu">
+                    <mat-icon>more_horiz</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="editTask()">
+                        <mat-icon>edit</mat-icon>
+                        Edit
+                    </button>
+                    <button mat-menu-item (click)="deleteTask()">
+                        <mat-icon>delete</mat-icon>
+                        Delete
+                    </button>
+                </mat-menu>
+            </mat-card-subtitle>
+        </div>
+    </mat-card-header>
+
+    <mat-card-content>
+        <div class="info-row">
+            <strong><span class="left-align">{{ pointEstimateMap[task.pointEstimate] || 0 }} points</span></strong>
+            <span class="right-align"><app-due-date [date]="task.dueDate"></app-due-date></span>
+        </div>
+        <div class="tags-row">
+            <app-tag *ngFor="let tag of task.tags" [tagName]="tag"></app-tag>
+        </div>
+    </mat-card-content>
+
+    <mat-card-footer>
+        <app-avatar [urlAvatar]="'https://avatar.iran.liara.run/public'"></app-avatar>
+    </mat-card-footer>
+</mat-card>
