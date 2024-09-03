@@ -16,7 +16,7 @@ export class TaskCardComponent {
       avatar: 'path/to/avatar.png',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
-      type: UserType.CANDIDATE // Ajusta según tu enum
+      type: '' // Ajusta según tu enum
     },
     createdAt: new Date().toISOString(),
     creator: {
@@ -26,7 +26,7 @@ export class TaskCardComponent {
       avatar: 'path/to/avatar.png',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
-      type: UserType.ADMIN // Ajusta según tu enum
+      type: '' // Ajusta según tu enum
     },
     dueDate: 'YESTERDAY',
     id: 'task123',

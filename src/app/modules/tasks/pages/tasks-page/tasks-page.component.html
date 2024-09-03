@@ -5,12 +5,14 @@
         </button>
     </div>
 
-    <div class="bottom-section">
-        <div class="column" *ngFor="let column of columns">
-            <div class="column-header">{{ column }}</div>
-            <div class="column-body">
-                <app-task-card></app-task-card>
+    <div class="bottom-section" *ngIf="(tasksByStatus$ | async) as tasksByStatus">
+        <ng-container *ngFor="let status of columns">
+            <div class="column" *ngIf="tasksByStatus[status] && tasksByStatus[status].length > 0">
+                <div class="column-header">{{ status }}</div>
+                <div class="column-body">
+                    <app-task-card *ngFor="let task of tasksByStatus[status]" [task]="task"></app-task-card>
+                </div>
             </div>
-        </div>
+        </ng-container>
     </div>
 </div>

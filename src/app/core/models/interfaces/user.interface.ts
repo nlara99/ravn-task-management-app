@@ -33,7 +33,7 @@ export interface User {
     /**
      * The type of user, indicating their role and access level within the system.
      */
-    type: UserType;
+    type: string;
 
     /**
      * The date and time when the user account was last updated.

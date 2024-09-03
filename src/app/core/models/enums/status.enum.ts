@@ -2,37 +2,31 @@
  * Enum representing the different statuses that a task can have.
  * These statuses track the progress and state of tasks within the project.
  */
-export enum Status {
+export const Status = {
     /**
      * Task is in the backlog, yet to be started.
      */
-    BACKLOG,
+    BACKLOG: 'Backlog',
 
     /**
      * Task has been cancelled and will not be completed.
      */
-    CANCELLED,
+    CANCELLED: 'Cancelled',
 
     /**
      * Task has been completed successfully.
      */
-    DONE,
+    DONE: 'Done',
 
     /**
      * Task is currently being worked on.
      */
-    IN_PROGRESS,
+    IN_PROGRESS: 'In Progress',
 
     /**
      * Task is planned but work has not yet started.
      */
-    TODO
-}
+    TODO: 'Todo'
+} as const;
 
-export const StatusNames: { [key in Status]: string } = {
-    [Status.BACKLOG]: 'Backlog',
-    [Status.CANCELLED]: 'Cancelled',
-    [Status.DONE]: 'Done',
-    [Status.IN_PROGRESS]: 'In Progress',
-    [Status.TODO]: 'Todo'
-};
+type Status = typeof Status[keyof typeof Status];
