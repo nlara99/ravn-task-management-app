@@ -10,6 +10,14 @@ import { TokenInterceptor } from './core/interceptors/token.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { ROOT_REDUCERS } from './core/store/app.state';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+
 
 @NgModule({
   declarations: [
@@ -20,8 +28,14 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({}, {}),
-    StoreDevtoolsModule.instrument({ name: 'TEST'}),
+    StoreModule.forRoot(ROOT_REDUCERS),
+    StoreDevtoolsModule.instrument({ name: 'TEST' }),
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [
     {
@@ -34,7 +48,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-  },
+    },
   ],
   bootstrap: [AppComponent]
 })

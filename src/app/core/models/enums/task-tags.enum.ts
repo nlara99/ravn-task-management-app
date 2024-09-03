@@ -28,3 +28,12 @@ export enum TaskTag {
      */
     REACT
 }
+
+
+export const TagsNames: { [key in TaskTag]: string } = {
+    [TaskTag.ANDROID]: 'Android',
+    [TaskTag.IOS]: 'IOS',
+    [TaskTag.NODE_JS]: 'Node_JS',
+    [TaskTag.RAILS]: 'Rails',
+    [TaskTag.REACT]: 'React'
+};

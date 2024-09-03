@@ -1,1 +1,16 @@
-<p>tasks-page works!</p>
+<div class="container">
+    <div class="top-section">
+        <button mat-fab color="primary" class="add-button">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+
+    <div class="bottom-section">
+        <div class="column" *ngFor="let column of columns">
+            <div class="column-header">{{ column }}</div>
+            <div class="column-body">
+                <app-task-card></app-task-card>
+            </div>
+        </div>
+    </div>
+</div>

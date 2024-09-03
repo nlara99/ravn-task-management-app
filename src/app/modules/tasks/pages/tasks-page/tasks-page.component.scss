@@ -1,0 +1,70 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-section {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: inherit;
+  // border-bottom: 1px solid #ddd;
+  // border: 1px solid blueviolet;
+}
+
+.add-button {
+  width: 40px;
+  height: 40px;
+  background-color: #da584b;
+  color: #ddd;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.bottom-section {
+  width: 100%;
+  height: fit-content;
+  flex-grow: 1;
+  display: flex;
+  background-color: inherit;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  // border-right: 1px solid #ddd;
+  color: #ddd;
+  box-sizing: border-box;
+  background-color: inherit;
+}
+
+/* Geetting rid of las column right border  */
+.column:last-child {
+  border-right: none;
+}
+
+.column-header {
+  width: 100%;
+  height: 25px;
+  font-size: 18px;
+  // border: 1px solid red;
+}
+
+.column-body {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  // border: 1px solid red;
+}

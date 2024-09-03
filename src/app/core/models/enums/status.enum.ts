@@ -28,3 +28,11 @@ export enum Status {
      */
     TODO
 }
+
+export const StatusNames: { [key in Status]: string } = {
+    [Status.BACKLOG]: 'Backlog',
+    [Status.CANCELLED]: 'Cancelled',
+    [Status.DONE]: 'Done',
+    [Status.IN_PROGRESS]: 'In Progress',
+    [Status.TODO]: 'Todo'
+};
