@@ -22,7 +22,7 @@ import { SharedModule } from '../shared/shared.module';
     MatIconModule,
     MatCardModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
   ]
 })
 export class TasksModule { }

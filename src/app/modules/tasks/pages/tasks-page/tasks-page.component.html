@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="(tasksByStatus$ | async) as tasksByStatus">
     <div class="top-section">
         <button mat-fab color="primary" class="add-button">
             <mat-icon>add</mat-icon>
@@ -6,11 +6,19 @@
     </div>
 
     <div class="bottom-section">
-        <div class="column" *ngFor="let column of columns">
-            <div class="column-header">{{ column }}</div>
-            <div class="column-body">
-                <app-task-card></app-task-card>
+        <ng-container *ngFor="let status of columns">
+            <div class="column">
+                <div class="column-header">
+                    {{ status }} <small>({{ tasksByStatus[status] ? tasksByStatus[status].length : 0 }})</small>
+                </div>
+                <div class="column-body" *ngIf="tasksByStatus[status] && tasksByStatus[status].length > 0; else empty">
+                    <app-task-card *ngFor="let task of tasksByStatus[status]" [task]="task"></app-task-card>
+                </div>
+
+                <ng-template #empty>
+                    <app-empty></app-empty>
+                </ng-template>
             </div>
-        </div>
+        </ng-container>
     </div>
 </div>

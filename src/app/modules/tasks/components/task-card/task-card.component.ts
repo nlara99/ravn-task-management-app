@@ -16,7 +16,7 @@ export class TaskCardComponent {
       avatar: 'path/to/avatar.png',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
-      type: UserType.CANDIDATE // Ajusta según tu enum
+      type: '' // Ajusta según tu enum
     },
     createdAt: new Date().toISOString(),
     creator: {
@@ -26,7 +26,7 @@ export class TaskCardComponent {
       avatar: 'path/to/avatar.png',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
-      type: UserType.ADMIN // Ajusta según tu enum
+      type: '' // Ajusta según tu enum
     },
     dueDate: 'YESTERDAY',
     id: 'task123',
@@ -41,6 +41,20 @@ export class TaskCardComponent {
       TaskTag.RAILS,
       TaskTag.REACT
     ].map(tag => TagsNames[tag as TaskTag])
+  };
+
+  pointEstimateMap: { [key: string]: number } = {
+    'ZERO': 0,
+    'ONE': 1,
+    'TWO': 2,
+    'THREE': 3,
+    'FOUR': 4,
+    'FIVE': 5,
+    'SIX': 6,
+    'SEVEN': 7,
+    'EIGHT': 8,
+    'NINE': 9,
+    'TEN': 10
   };
 
   editTask() {

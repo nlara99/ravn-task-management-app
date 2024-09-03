@@ -4,7 +4,7 @@
         <mat-sidenav #sidenav mode="over" class="sidenav" (closedStart)="onCloseSidenav()">
             <mat-toolbar class="logo-container"></mat-toolbar>
             <mat-nav-list>
-                <a mat-list-item href="#">
+                <a mat-list-item [routerLink]="'/tasks'">
                     <div class="nav-item">
                         <mat-icon class="nav-icon">grid_view</mat-icon>
                         <span class="nav-text">Dashboard</span>
@@ -29,7 +29,7 @@
         <div class="sidebar">
             <mat-toolbar class="logo-container"></mat-toolbar>
             <mat-nav-list>
-                <a mat-list-item href="#">
+                <a mat-list-item [routerLink]="'/tasks'">
                     <div class="nav-item">
                         <mat-icon class="nav-icon">grid_view</mat-icon>
                         <span class="nav-text">Dashboard</span>

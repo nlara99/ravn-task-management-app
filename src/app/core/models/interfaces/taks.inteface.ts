@@ -39,7 +39,7 @@ export interface Task {
     /**
      * The point estimate of the task, indicating its level of effort or complexity.
      */
-    pointEstimate: PointEstimate;
+    pointEstimate: number;
 
     /**
      * The position of the task, which might be used for ordering or prioritization.
@@ -49,7 +49,7 @@ export interface Task {
     /**
      * The current status of the task (e.g., In Progress, Done).
      */
-    status: Status;
+    status: string;
 
     /**
      * An array of tags categorizing the task based on technologies or platforms.

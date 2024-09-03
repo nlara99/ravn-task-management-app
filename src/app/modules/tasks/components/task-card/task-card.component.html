@@ -1,6 +1,6 @@
 <mat-card class="task-card">
     <mat-card-header>
-        <mat-card-title>{{ task.status }}</mat-card-title>
+        <mat-card-title>{{ task.name }}</mat-card-title>
         <div>
             <mat-card-subtitle>
                 <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -22,7 +22,7 @@
 
     <mat-card-content>
         <div class="info-row">
-            <strong><span class="left-align">{{ task.pointEstimate }}</span></strong>
+            <strong><span class="left-align">{{ pointEstimateMap[task.pointEstimate] || 0 }} points</span></strong>
             <span class="right-align"><app-due-date [date]="task.dueDate"></app-due-date></span>
         </div>
         <div class="tags-row">

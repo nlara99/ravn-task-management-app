@@ -1,12 +1,8 @@
-import { APP_INITIALIZER, NgModule, isDevMode } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { appConfigInit } from './app-config-Init';
-import { ConfigService } from './modules/shared/services/config.service';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { TokenInterceptor } from './core/interceptors/token.interceptor';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -17,7 +13,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { GraphQLModule } from './modules/graphql/graphql.module';
+import { EffectsModule } from '@ngrx/effects';
+import { TasksEffects } from './core/store/effects/tasks.effect.service';
 
 @NgModule({
   declarations: [
@@ -28,28 +29,21 @@ import { MatListModule } from '@angular/material/list';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot(ROOT_REDUCERS),
-    StoreDevtoolsModule.instrument({ name: 'TEST' }),
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    StoreModule.forRoot(ROOT_REDUCERS),
+    EffectsModule.forRoot(TasksEffects),
+    StoreDevtoolsModule.instrument({ name: 'TEST' }),
+    GraphQLModule,
   ],
-  providers: [
-    {
-      provide: APP_INITIALIZER,
-      useFactory: appConfigInit,
-      multi: true,
-      deps: [ConfigService],
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
-      multi: true
-    },
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,5 +2,6 @@ import { Task } from "../taks.inteface";
 
 export interface TasksState {
     loading: boolean,
-    tasks: ReadonlyArray<Task>
+    tasks: Task[],
+    error: any[] | null
 } 
