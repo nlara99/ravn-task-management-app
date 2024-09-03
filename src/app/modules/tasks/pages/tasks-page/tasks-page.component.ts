@@ -10,6 +10,7 @@ import { Status, StatusNames } from 'src/app/core/models/enums';
 export class TasksPageComponent implements OnInit {
 
   columns: string[] = Object.values(Status).filter(value => typeof value === 'number').map(status => StatusNames[status as Status]);
+  // columns: string[] = ['Done', 'Todo', 'Working'];
 
   constructor() {
 

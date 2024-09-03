@@ -54,5 +54,5 @@ export interface Task {
     /**
      * An array of tags categorizing the task based on technologies or platforms.
      */
-    tags: TaskTag[];
+    tags: string[];
 }

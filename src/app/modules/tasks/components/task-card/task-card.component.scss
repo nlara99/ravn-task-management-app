@@ -1,12 +1,12 @@
 .task-card {
   border-radius: 5px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 10px;
-  background-color: inherit;
-  border: 1px solid white;
+  background-color: #2C2F33;
+  padding: 0px 10px;
+  // border: 1px solid white;
 
   mat-card-header {
-    border: 1px solid red;
+    // border: 1px solid red;
     display: flex;
     flex-flow: row;
     justify-content: space-between !important;
@@ -18,17 +18,17 @@
       text-align: right;
       font-size: 16px;
       font-weight: bold;
-      border: 1px solid yellow;
+      // border: 1px solid yellow;
     }
 
     mat-card-subtitle {
-      border: 1px solid green;
+      // border: 1px solid green;
     }
   }
 
   mat-card-content {
     padding: 0px;
-    border: 1px solid green;
+    // border: 1px solid green;
   }
 
   .info-row {
@@ -36,8 +36,9 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    align-items: center;
     margin-top: 10px;
-    border: 1px solid orangered;
+    // border: 1px solid orangered;
   }
 
   .left-align {
@@ -49,7 +50,11 @@
   }
 
   .tags-row {
-    // margin-top: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 10px;
   }
 
   .tag {
@@ -58,15 +63,5 @@
     margin-right: 5px;
     border-radius: 3px;
     font-size: 12px;
-  }
-
-  .avatar-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #f0f0f0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 }

@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { TaskCardComponent } from './components/task-card/task-card.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [
     CommonModule,
     TasksRoutingModule,
+    SharedModule,
     MatIconModule,
     MatCardModule,
     MatMenuModule,

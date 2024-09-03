@@ -13,8 +13,8 @@
   align-items: center;
   box-sizing: border-box;
   background-color: inherit;
-  border-bottom: 1px solid #ddd;
-  border: 1px solid blueviolet;
+  // border-bottom: 1px solid #ddd;
+  // border: 1px solid blueviolet;
 }
 
 .add-button {
@@ -43,7 +43,8 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #ddd;
+  padding: 10px;
+  // border-right: 1px solid #ddd;
   color: #ddd;
   box-sizing: border-box;
   background-color: inherit;
@@ -58,12 +59,12 @@
   width: 100%;
   height: 25px;
   font-size: 18px;
-  border: 1px solid red;
+  // border: 1px solid red;
 }
 
 .column-body {
   width: 100%;
   display: flex;
   flex-flow: column;
-  border: 1px solid red;
+  // border: 1px solid red;
 }
