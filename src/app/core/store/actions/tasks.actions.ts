@@ -1,11 +1,14 @@
 import { createAction, props } from '@ngrx/store';
 import { Task } from '../../models/interfaces/taks.inteface';
 
-// Acciones de ejemplo para manejar tareas
-export const loadTasks = createAction('[Task] Load Tasks');
+export const loadTasks = createAction('[Tasks] Load Tasks');
 
+export const loadTasksSuccess = createAction(
+    '[Tasks] Load Tasks Success',
+    props<{ tasks: Task[] }>()
+);
 
-
-
-// export const loadTasksSuccess = createAction('[Task] Load Tasks Success', props<{ tasks: Task[] }>());
-// export const loadTasksFailure = createAction('[Task] Load Tasks Failure', props<{ error: any }>());
+export const loadTasksFailure = createAction(
+    '[Tasks] Load Tasks Failure',
+    props<{ error: any }>()
+);
